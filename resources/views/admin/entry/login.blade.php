@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>后盾人 - houdunren.com</title>
+    <title>video - 2hider.com</title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="/node_modules/hdjs/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="copyright">
-        Powered by hdcms v2.0 © 2014-2019 www.hdcms.com
+        Powered by hdcms v2.0 © 2014-2019 www.2hider.com
     </div>
 </div>
 </body>

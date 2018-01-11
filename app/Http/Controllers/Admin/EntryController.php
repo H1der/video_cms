@@ -12,3 +12,4 @@ class EntryController extends Controller
         return view('admin.entry.login');
     }
 }
+
