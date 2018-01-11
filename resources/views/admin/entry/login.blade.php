@@ -5,8 +5,8 @@
     <title>video - 2hider.com</title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="/node_modules/hdjs/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/node_modules/hdjs/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/node_modules/hdjs/static/package/webuploader/jekyll/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/node_modules/hdjs/static/package/webuploader/jekyll/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hdcms.css" rel="stylesheet">
 </head>
 <body class="hdcms-login">
