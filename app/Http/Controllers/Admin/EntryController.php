@@ -12,13 +12,18 @@ use Auth;
  */
 class EntryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin.auth')->except('loginForm', 'login');
+    }
+
     /**
      * 后台主页
      * @return string
      */
     public function index()
     {
-        return '后台.';
+        return view('admin.entry.index');
     }
 
     /**

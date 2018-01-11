@@ -26,6 +26,6 @@ $factory->define(App\Model\Admin::class, function (Faker $faker) {
     static $password;
     return [
         'username' => $faker->name,
-        'password' => $password?:$password=bcrypt(''),
+        'password' => $password ?: $password = bcrypt('admin'),
     ];
 });
