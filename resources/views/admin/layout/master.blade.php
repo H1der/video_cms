@@ -148,6 +148,7 @@
     </ul>
 </div>
 </body>
+@include('admin.layout.errors');
 <script>
     require(['bootstrap'], function ($) {
         $('#flash-overlay-modal').modal();
