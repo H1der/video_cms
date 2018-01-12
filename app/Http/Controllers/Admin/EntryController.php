@@ -56,5 +56,15 @@ class EntryController extends Controller
         return redirect('/admin/login')->with('error', '用户名密码错误');
 
     }
+
+    /**
+     * 用户退出
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('/admin/login');
+    }
 }
 

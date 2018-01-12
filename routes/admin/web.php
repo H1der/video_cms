@@ -7,5 +7,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::post('/login', 'EntryController@login');
     //后台登陆主页
     Route::get('/index', 'EntryController@index');
+    //退出
+    Route::get('logout', 'EntryController@logout');
 
 });
