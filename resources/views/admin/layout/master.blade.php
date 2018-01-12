@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>后盾人 - houdunren.com</title>
+    <title>video_Cms - 2hider.com</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -148,7 +148,8 @@
     </ul>
 </div>
 </body>
-@include('admin.layout.errors');
+@include('admin.layout.errors')
+@include('flash::message')
 <script>
     require(['bootstrap'], function ($) {
         $('#flash-overlay-modal').modal();
