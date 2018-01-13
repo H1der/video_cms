@@ -39,13 +39,13 @@
     </form>
     <script>
         function del(id) {
-            require(['util'], function (util) {
-                util.confirm('确定删除吗?', function () {
+            require(['hdjs'], function (hdjs) {
+                hdjs.confirm('确定删除吗?', function () {
                     $.ajax({
                         url: '/admin/tag/' + id,
                         method: 'DELETE',
                         success: function (response) {
-                            util.message(response.message, 'refresh');
+                            hdjs.message(response.message, 'refresh');
                         }
                     })
                 })
