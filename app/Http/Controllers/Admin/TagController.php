@@ -77,7 +77,7 @@ class TagController extends CommonController
         $model['name'] = $request['name'];
         $model->save();
 
-        return redirect('admin/tag');
+        return redirect('/admin/tag');
     }
 
     /**
