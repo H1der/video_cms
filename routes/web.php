@@ -14,5 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::any('/component/uploader', 'Component\UploadController@uploader');
+Route::any('/component/filesLists', 'Component\UploadController@filesLists');
 
 include __DIR__.'/admin/web.php';

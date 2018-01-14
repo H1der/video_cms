@@ -14,5 +14,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::post('changePassword', 'MyController@changePassword');
     //标签管理
     Route::resource('tag', 'TagController');
+    //课程管理
+    Route::resource('lesson', 'LessonController');
 
 });
