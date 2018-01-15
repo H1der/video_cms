@@ -19,7 +19,7 @@
             'ossSign': '?s=component/oss/sign&m=member&siteid=18',
         };
     </script>
-    <script src="/node_modules/hdjs/dist/static/component/util.js"></script>
+    <script src="/node_modules/hdjs/src/modules/util.js"></script>
     <script src="/node_modules/hdjs/dist/static/requirejs/require.js"></script>
     <script src="/node_modules/hdjs/dist/static/requirejs/config.js"></script>
     <link href="/css/hdcms.css" rel="stylesheet">
