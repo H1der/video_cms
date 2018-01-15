@@ -170,7 +170,7 @@
                     //获取签名
                     serverUrl: '/component/oss?',
                     //上传目录
-                    dir: 'hdphp/',
+                    dir: 'video/',
                     //按钮元素
                     pick: id,
                     accept: {

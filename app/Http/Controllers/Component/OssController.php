@@ -10,11 +10,11 @@ class OssController extends Controller
     public function sign()
     {
         //AccessKeyId
-        $id = '815d2c2099474088a4adea6d96559577';
+        $id = '3N4FlG4nQAHRhADcaC2Cwwq0HQI1ckIC5iJd2zyC';
         //AccessKeySecret
-        $key = '55e21f3f33d34c9cb2c14e87f79bdfe9 ';
+        $key = 'VEW0ezMtYFZLsnp_4Ty_nMHvcWN2uz0SX38waM82 ';
         //OSS外网域名:
-        $host = 'video.199481092.eastchina1.mtmss.com';
+        $host = 'http://p2lvm34dl.bkt.clouddn.com';
         //oss中本次上传存放文件的目录
         $dir = $_GET['dir'];
         function gmt_iso8601($time)
