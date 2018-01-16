@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Model\Lesson;
+use App\Model\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class LessonController extends Controller
+class LessonController extends CommonController
 {
     /**
      * Display a listing of the resource.
@@ -47,7 +48,11 @@ class LessonController extends Controller
 
         $videos = json_decode($request['videos'], true);
         foreach ($videos as $video) {
-            $lesson->videos()->create($video);
+            $lesson->videos()->create([
+                'title' => $video['title'],
+                'path' => $video['path'],
+
+            ]);
         }
         return redirect('/admin/lesson');
     }
@@ -71,7 +76,10 @@ class LessonController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lesson = Lesson::find($id);
+        $videos = json_encode($lesson->videos()->get()->toArray(), JSON_UNESCAPED_UNICODE);
+
+        return view('admin.lesson.edit', compact('lesson', 'videos'));
     }
 
     /**
@@ -83,7 +91,24 @@ class LessonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lesson = Lesson::find($id);
+        $lesson['title'] = $request['title'];
+        $lesson['introduce'] = $request['introduce'];
+        $lesson['preview'] = $request['preview'];
+        $lesson['iscommend'] = $request['iscommend'];
+        $lesson['ishot'] = $request['ishot'];
+        $lesson['click'] = $request['click'];
+        $lesson->save();
+        Video::where('lesson_id', $id)->delete();
+        $videos = json_decode($request['videos'], true);
+        foreach ($videos as $video) {
+            $lesson->videos()->create([
+                'title' => $video['title'],
+                'path' => $video['path'],
+
+            ]);
+        }
+        return redirect('/admin/lesson');
     }
 
     /**
@@ -94,6 +119,8 @@ class LessonController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Lesson::destroy($id);
+        Video::where('lesson_id', $id)->delete();
+        return $this->success('删除成功');
     }
 }
