@@ -110,12 +110,7 @@
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">视频地址</label>
                             <div class="col-sm-10">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" v-model="v.path">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button" :id="v.id">上传视频</button>
-                                    </span>
-                                </div>
+                                <input type="text" class="form-control" v-model="v.path">
                             </div>
                         </div>
                     </div>
@@ -162,43 +157,5 @@
                 }
             })
         });
-
-        function upload(field) {
-            require(['oss'], function (oss) {
-                var id = '#' + field.id;
-                var uploader = oss.upload({
-                    //获取签名
-                    serverUrl: '/component/oss?',
-                    //上传目录
-                    dir: 'video/',
-                    //按钮元素
-                    pick: id,
-                    accept: {
-                        title: 'video',
-                        extensions: 'mp4',
-                        mimeTypes: 'video/mp4'
-                    }
-                });
-                //上传开始
-                uploader.on('startUpload', function () {
-//                    console.log('开始上传');
-                });
-                //上传成功
-                uploader.on('uploadSuccess', function (file, response) {
-                    field.path = oss.oss.host + '/' + oss.oss.object_name;
-//                    console.log('上传完成,文件名:' + oss.oss.host + '/' + oss.oss.object_name);
-                });
-                //上传中
-                uploader.on('uploadProgress', function (file, percentage) {
-                    $("#percentage" + field.id).show().find('b').text(parseInt(percentage * 100) + '%');
-//                    console.log('上传中,进度:' + parseInt(percentage * 100));
-                })
-                //上传结束
-                uploader.on('uploadComplete', function () {
-                    $("#percentage" + field.id).hide();
-//                    console.log('上传结束');
-                })
-            });
-        }
     </script>
 @endsection
