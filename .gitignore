@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/attachment
+/webapp/src/移动站手机模板
 /storage/*.key
 /vendor
 /.idea
