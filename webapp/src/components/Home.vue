@@ -18,32 +18,13 @@
 
         <!--推荐视频-->
         <h2>推荐视频</h2>
-
         <div id="recommend">
-            <a href="">
-                <img src="static/images/4.jpg" alt=""/>
+            <router-link :to="{params:{lessonId:v.id},name:'Page'}" v-for="v in commendLesson" :key="v.id">
+                <img :src="v.preview"/>
                 <i class="iconfont icon-bofang"></i>
                 <span class="time">22:56</span>
-                <span class="title">谷歌：没有扫描仪也能</span>
-            </a>
-            <a href="">
-                <img src="static/images/5.jpg" alt=""/>
-                <i class="iconfont icon-bofang"></i>
-                <span class="time">22:56</span>
-                <span class="title">谷歌：没有扫描仪也能</span>
-            </a>
-            <a href="">
-                <img src="static/images/6.jpg" alt=""/>
-                <i class="iconfont icon-bofang"></i>
-                <span class="time">22:56</span>
-                <span class="title">谷歌：没有扫描仪也能</span>
-            </a>
-            <a href="">
-                <img src="static/images/7.jpg" alt=""/>
-                <i class="iconfont icon-bofang"></i>
-                <span class="time">22:56</span>
-                <span class="title">谷歌：没有扫描仪也能</span>
-            </a>
+                <span class="title">{{v.title}}</span>
+            </router-link>
         </div>
         <!--推荐视频结束-->
         <a href="" class="more">MORE ></a>
@@ -51,11 +32,12 @@
         <h2>热门视频</h2>
         <div class="today">
             <div class="pic">
-                <a href=""><img src="static/images/8.jpg"/></a>
-                <a href=""><img src="static/images/9.jpg"/></a>
-                <a href=""><img src="static/images/10.jpg"/></a>
+                <router-link :to="{params:{lessonId:v.id},name:'Page'}" v-for="v in hotLesson" :key="v.id">
+                    <img :src="v.preview">
+                </router-link>
             </div>
         </div>
+        <div style="height: 50px"></div>
         <!--今日推荐结束-->
         <!--底部固定导航-->
         <ul id="bottom">
@@ -79,8 +61,22 @@
 <script>
     export default {
         name: "home",
+        mounted() {
+            //获取推荐
+            this.axios.get('http://video.com/api/commendLesson/4').then((response) => {
+                this.commendLesson = response.data.data;
+            })
+            //获取热门
+            this.axios.get('http://video.com/api/hotLesson/3').then((response) => {
+                this.hotLesson = response.data.data;
+            })
+        },
         data() {
+
             return {
+                //推荐课程
+                commendLesson: [],
+                hotLesson: [],
                 slides: [
                     {id: 1, path: 'static/images/1.jpg'},
                     {id: 2, path: 'static/images/2.jpg'},
