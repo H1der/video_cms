@@ -42,20 +42,8 @@
             <div class="navbar-header">
                 <ul class="nav navbar-nav">
                     <li class="top_menu">
-                        <a href="?s=site/entry/home&siteid=18&mark=platform" class="quickMenuLink">
+                        <a href="" class="quickMenuLink">
                             <i class="'fa-w fa fa-comments-o"></i> 网站主页 </a>
-                    </li>
-                    <li class="top_menu">
-                        <a href="http://houdunwang.com" target="_blank">
-                            <i class="'fa-w fa fa-cubes"></i> 实战培训 </a>
-                    </li>
-                    <li class="top_menu">
-                        <a href="http://houdunren.com" class="quickMenuLink">
-                            <i class="'fa-w fa fa-cubes"></i> 在线视频 </a>
-                    </li>
-                    <li class="top_menu">
-                        <a href="http://bbs.houdunwang.com" class="quickMenuLink">
-                            <i class="'fa-w fa fa-cubes"></i> 论坛讨论 </a>
                     </li>
                 </ul>
             </div>
@@ -126,11 +114,9 @@
     </div>
 </div>
 <div class="master-footer">
-    <a href="http://www.houdunwang.com">猎人训练</a>
-    <a href="http://www.hdphp.com">开源框架</a>
-    <a href="http://bbs.houdunwang.com">后盾论坛</a>
+    <a href="https://www.2hider.com">个人博客</a>
     <br>
-    Powered by hdcms v2.0 © 2014-2019 www.hdcms.com 后盾人咨询电话: 010-86467608
+    Powered by video_cms v2.0 © 2017-2018 www.hdcms.com
 </div>
 <script>
     require(['bootstrap']);

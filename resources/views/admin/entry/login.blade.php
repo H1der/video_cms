@@ -11,7 +11,7 @@
 </head>
 <body class="hdcms-login">
 <div class="container logo">
-    <div style="background: url('http://www.houdunren.com/resource/images/logo.png') no-repeat; background-size: contain;height: 60px;"></div>
+    <div style="height: 60px;"></div>
 </div>
 <div class="container well">
     <div class="row ">
@@ -43,11 +43,11 @@
             </form>
         </div>
         <div class="col-md-6">
-            <div style="background: url('http://www.houdunren.com/resource/images/houdunwang.jpg');background-size:100% ;height:230px;"></div>
+            <div style="background: url('https://gss0.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d50735fae6cd7b8964afe8f10c2442a7d8330e85.jpg');background-size:100% ;height:230px;"></div>
         </div>
     </div>
     <div class="copyright">
-        Powered by hdcms v2.0 © 2014-2019 www.2hider.com
+        Powered by video_cms v2.0 © 2017-2018 www.2hider.com
     </div>
 </div>
 </body>
