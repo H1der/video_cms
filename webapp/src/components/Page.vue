@@ -4,7 +4,7 @@
         <video :src="current.path" controls="controls"></video>
         <!--视频结束-->
 
-        <h1>10 导航条样式的设置</h1>
+        <h1 v-for="v in allLesson">{{v.title}}</h1>
 
         <ul id="list">
             <li v-for="v in videos"><a href="" @click.prevent="play(v)">{{v.title}}</a></li>
@@ -19,7 +19,7 @@
     export default {
         name: "page",
         mounted() {
-            //
+
             let lessonId = this.$route.params.lessonId;
             this.axios.get('http://video.com/api/videos/' + lessonId).then((response) => {
                 if (response.status != 200 && response.data.code != 200) {
@@ -30,13 +30,21 @@
                     this.current = this.videos[0];
                 }
             })
+
+            //获取视频
+            this.axios.get('http://video.com/api/allLesson/' + lessonId).then((response) => {
+                this.allLesson = response.data.data;
+                console.log(this.allLesson);
+            })
+
         },
         data() {
             return {
                 //当前视频
                 current: {},
                 //视频列表
-                videos: []
+                videos: [],
+                allLesson: [],
             }
         },
         methods: {

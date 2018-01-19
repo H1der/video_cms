@@ -10,4 +10,6 @@ Route::group(['namespace' => 'api'], function () {
     Route::get('hotLesson/{row}', 'ContentController@hotLesson');
     //视频列表
     Route::get('videos/{LessonId}', 'ContentController@videos');
+    //通过课程ID获取课程
+    Route::get('allLesson/{LessonId}', 'ContentController@allLesson');
 });

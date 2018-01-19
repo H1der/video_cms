@@ -29,7 +29,8 @@ class ContentController extends CommonController
     {
         if ($tid) {
             $data = DB::table('lessons')
-                ->join('tag_lessons', 'lesson_id', '=', 'tag_lessons.lesson_id')
+                ->select('lessons.*')
+                ->join('tag_lessons', 'lessons.id', '=', 'tag_lessons.lesson_id')
                 ->where('tag_id', $tid)
                 ->get();
         } else {
@@ -68,6 +69,13 @@ class ContentController extends CommonController
     public function videos($lessonId)
     {
         $data = Video::where('lesson_id', $lessonId)->get();
+
+        return $this->response($data);
+    }
+
+    public function allLesson($lessonId)
+    {
+        $data = Lesson::where('id', $lessonId)->get();
 
         return $this->response($data);
     }
