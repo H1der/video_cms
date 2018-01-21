@@ -13,7 +13,7 @@
 ## install
 1. 获取源代码
 直接下载压缩包或者 git 克隆源代码
-> git clone git@github.com:WaitMoonMan/monday-shop.git master
+> git clone git@github.com:H1der/video_cms.git master
 
 2.安装依赖扩展包
 > composer install
